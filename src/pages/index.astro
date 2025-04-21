@@ -1,28 +1,39 @@
 ---
 import '../styles/global.css';
+import { Image } from 'astro:assets';
+// Import assets
+import profilePic from '../assets/me.jpg';
+// Import favicon assets
+import favicon from '../assets/favicon.svg';
+import favicon96 from '../assets/favicon-96x96.png';
+import faviconIco from '../assets/favicon.ico';
+import appleIcon from '../assets/apple-touch-icon.png';
+// Import site manifest
+import siteManifest from '../assets/site.webmanifest';
 ---
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>William L. Anderson</title>
-    <link rel="icon" type="image/png" href="/src/assets/favicon-96x96.png" sizes="96x96" />
-	<link rel="icon" type="image/svg+xml" href="/src/assets/favicon.svg" />
-	<link rel="shortcut icon" href="/src/assets/favicon.ico" />
-	<link rel="apple-touch-icon" sizes="180x180" href="/src/assets/apple-touch-icon.png" />
-	<link rel="manifest" href="/src/assets/site.webmanifest" />
+    <link rel="icon" type="image/png" href={favicon96.src} sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href={favicon.src} />
+    <link rel="shortcut icon" href={faviconIco.src} />
+    <link rel="apple-touch-icon" sizes="180x180" href={appleIcon.src} />
+    <link rel="manifest" href={siteManifest.src} />
   </head>
   <body>
     <main class="container">
       <section id="hero">
         <div class="header-container">
-          <img src="/src/assets/me.jpg" alt="William L. Anderson" class="profile-pic" />
+          <Image src={profilePic} alt="William L. Anderson" class="profile-pic" />
           <div class="header-text">
             <h1>William L. Anderson</h1>
             <p>I'm an undergraduate at UW-Madison, broadly interested in helping ensure highly capable AI benefits humanity through technical research, policy, strategy, and fieldbuilding. This summer, I'll be a Research Fellow at UChicago's Existential Risks Lab, and am incoming as the Director of the Wisconsin AI Safety Initiative. I'm always open to chat!</p>
-			<div id="email-container" class="contact-info">
-				<noscript>wlanderson2 [at] wisc [dot] edu</noscript>
-			  </div>
+            <div id="email-container" class="contact-info">
+              <noscript>wlanderson2 [at] wisc [dot] edu</noscript>
+            </div>
           </div>
         </div>
         <ul class="social-links">
@@ -40,7 +51,7 @@ import '../styles/global.css';
         if (emailContainer) {
           const user = 'wlanderson2';
           const domain = 'wisc';
-		  const topLevelDomain = 'edu'
+          const topLevelDomain = 'edu'
           
           // Create the displayed text (just the email address now)
           const displayText = user + ' [at] ' + domain + ' [dot] ' + topLevelDomain;
