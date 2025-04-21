@@ -1,0 +1,190 @@
+/* Base Styles */
+:root {
+  --primary-color: #526e8e;
+  --bg-color: #fafafa;
+  --text-color: #333333;
+  --accent-color: #e6e6e6;
+  --transition: all 0.3s ease;
+}
+
+/* Typography and Global Elements */
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.8;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  color: var(--primary-color);
+}
+
+/* Layout and Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* Hero Section */
+#hero {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem; /* Increased from 2rem to provide more spacing between image and text */
+  margin-bottom: 2.5rem; /* Increased from 2rem */
+  flex-direction: row; /* Ensure the elements are laid out horizontally */
+}
+
+.header-text {
+  flex: 1;
+}
+
+#hero h1 {
+  font-size: 3rem; /* Increased from 2.5rem */
+  margin: 0 0 0; /* Reduced bottom margin */
+  line-height: 150%;
+}
+
+#hero p {
+  font-size: 1.2rem; /* Increased from 1.1rem */
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
+/* Contact Information */
+.contact-info {
+  margin: 0 0 0.5rem 0; /* Reduced bottom margin for less gap */
+  font-size: 1.3rem;
+  color: #333333; /* Changed to charcoal color */
+  text-align: center;
+  display: flex; /* Added to allow items to be side by side */
+  align-items: center; /* Vertical alignment */
+  gap: 0.3rem; /* Small gap between label and email */
+}
+
+.contact-info::before {
+  content: "Email: "; /* Add the "Email:" label */
+  color: #333333; /* Charcoal color */
+  font-weight: 500;
+}
+
+.email-link {
+  color: var(--primary-color); /* Keep the blue color for the email */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+
+/* Profile Image */
+.profile-pic {
+  width: 240px; /* Increased from 180px */
+  height: auto; /* Allow height to adjust based on the original aspect ratio */
+  object-fit: contain; /* Ensure the image maintains its aspect ratio */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 4px solid white;
+  transition: var(--transition);
+}
+
+.profile-pic:hover {
+  transform: scale(1.02);
+}
+
+/* Social Links */
+.social-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-links li a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 30px;
+  transition: var(--transition);
+}
+
+.social-links li a:hover {
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(82, 110, 142, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+  
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .profile-pic {
+    width: 160px;
+    /* No fixed height to maintain aspect ratio */
+    order: 0; /* Reset the order on mobile */
+  }
+  
+  #hero h1 {
+    font-size: 2rem;
+  }
+  
+  .social-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {  
+  .social-links {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .social-links li {
+    width: 100%;
+  }
+  
+  .social-links li a {
+    display: block;
+    text-align: center;
+  }
+}

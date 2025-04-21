@@ -1,7 +1,7 @@
 {
   "name": "personal-site",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.4.2"
+    "astro": "^5.7.4",
+    "nvm": "^0.0.4"
   }
 }

@@ -1,11 +1,61 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import '../styles/global.css';
 ---
-
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>William L. Anderson</title>
+    <link rel="icon" type="image/png" href="/src/assets/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="/src/assets/favicon.svg" />
+	<link rel="shortcut icon" href="/src/assets/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/src/assets/apple-touch-icon.png" />
+	<link rel="manifest" href="/src/assets/site.webmanifest" />
+  </head>
+  <body>
+    <main class="container">
+      <section id="hero">
+        <div class="header-container">
+          <img src="/src/assets/me.jpg" alt="William L. Anderson" class="profile-pic" />
+          <div class="header-text">
+            <h1>William L. Anderson</h1>
+            <p>I'm an undergraduate at UW-Madison, broadly interested in helping ensure highly capable AI benefits humanity through technical research, policy, strategy, and fieldbuilding. This summer, I'll be a Research Fellow at UChicago's Existential Risks Lab, and am incoming as the Director of the Wisconsin AI Safety Initiative. I'm always open to chat!</p>
+			<div id="email-container" class="contact-info">
+				<noscript>wlanderson2 [at] wisc [dot] edu</noscript>
+			  </div>
+          </div>
+        </div>
+        <ul class="social-links">
+          <li><a href="https://www.linkedin.com/in/william-l-anderson-a853b92aa/" target="_blank">LinkedIn</a></li>
+          <li><a href="https://github.com/wlanderson0" target="_blank">GitHub</a></li>
+          <li><a href="https://wlandersons.substack.com/" target="_blank">Substack</a></li>
+          <li><a href="/resume.pdf" target="_blank">Resume</a></li>
+        </ul>
+      </section>
+    </main>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const emailContainer = document.getElementById('email-container');
+        if (emailContainer) {
+          const user = 'wlanderson2';
+          const domain = 'wisc';
+		  const topLevelDomain = 'edu'
+          
+          // Create the displayed text (just the email address now)
+          const displayText = user + ' [at] ' + domain + ' [dot] ' + topLevelDomain;
+          
+          // Create the actual mailto link
+          const link = document.createElement('a');
+          link.href = 'mailto:' + user + '@' + domain + '.' + topLevelDomain;
+          link.textContent = displayText;
+          link.className = 'email-link';
+          
+          // Clear any existing content
+          emailContainer.innerHTML = '';
+          emailContainer.appendChild(link);
+        }
+      });
+    </script>
+  </body>
+</html>
