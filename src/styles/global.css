@@ -69,6 +69,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.2rem; /* Increased from 1.1rem */
   line-height: 1.7;
   color: #333333;
+  color: #333333;
   margin: 0;
 }
 
@@ -90,6 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Email styling */
+/* Email styling */
 .email-link {
   text-decoration: none;
   font-weight: 500;
@@ -97,6 +99,24 @@ h1, h2, h3, h4, h5, h6 {
 
 .email-link:hover {
   text-decoration: underline;
+}
+
+.email-part {
+  color: var(--primary-color); /* Blue color for email parts */
+}
+
+.email-separator {
+  color: #333333; /* Charcoal color for [at] and [dot] */
+}
+
+/* Update the existing contact-info styling */
+.contact-info {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .email-part {
@@ -184,6 +204,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   gap: 1.5rem;
   margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .social-links li a {
@@ -225,6 +246,12 @@ h1, h2, h3, h4, h5, h6 {
   
   #hero h1 {
     font-size: 2rem;
+  }
+  
+  /* Updated section headers for mobile */
+  #education-research h2, #leadership h2, #policy-work h2, #awards h2, #mentors h2, #personal h2{
+    font-size: 1.8rem;
+    text-align: center;
   }
   
   /* Updated section headers for mobile */
