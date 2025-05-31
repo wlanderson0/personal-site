@@ -152,26 +152,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Section Styles - Updated */
-#education-research {
+#research {
   padding-top: 2rem;
   border-top: 1px solid #e0e0e0;
 }
 
-#education-research, #leadership, #policy-work, #awards, #mentors, #personal {
+#education, #research, #leadership, #policy-work, #awards, #mentors, #personal, #talks {
   margin: 1rem 0;
   padding-bottom: 1rem; /* Reduced from 1.5rem for smaller vertical gap */
   border-bottom: 1px solid #e0e0e0;
 }
 
 /* Section headers - Updated to be larger */
-#education-research h2, #leadership h2, #policy-work h2, #awards h2, #mentors h2, #personal h2 {
+#education h2, #research h2, #leadership h2, #policy-work h2, #awards h2, #mentors h2, #personal h2, #talks h2 {
   font-size: 2.2rem; /* Increased from 2rem */
   margin-bottom: 0.3rem; /* Slightly reduced for tighter layout */
   margin-top: 0.3rem; /* Slightly reduced for tighter layout */
   text-align: left;
 }
 
-#education-research p, #leadership p, #policy-work p, #awards p, #mentors p, #personal p {
+#education p, #research p, #leadership p, #policy-work p, #awards p, #mentors p, #personal p, #talks p{
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
@@ -249,13 +249,13 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   /* Updated section headers for mobile */
-  #education-research h2, #leadership h2, #policy-work h2, #awards h2, #mentors h2, #personal h2{
+  #education h2, #research h2, #leadership h2, #policy-work h2, #awards h2, #mentors h2, #personal h2, #talks h2{
     font-size: 1.8rem;
     text-align: center;
   }
   
   /* Updated section headers for mobile */
-  #education-research h2, #leadership h2, #policy-work h2, #awards h2, #mentors h2, #personal h2{
+  #education h2, #research h2, #leadership h2, #policy-work h2, #awards h2, #mentors h2, #personal h2, #talks h2{
     font-size: 1.8rem;
     text-align: center;
   }
