@@ -24,6 +24,19 @@ import siteManifest from '../assets/site.webmanifest';
     <link rel="manifest" href={siteManifest.src} />
   </head>
   <body>
+   <nav class="navbar">
+        <a href="#" class="navbar-brand">
+            <span class="brand-full">William L. Anderson</span>
+            <span class="brand-short">Will Anderson</span>
+        </a>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        <ul class="navbar-links" id="navbarLinks">
+            <li><a href="https://www.linkedin.com/in/william-l-anderson-a853b92aa/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/wlanderson0" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://wlandersons.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a></li>
+            <li><a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        </ul>
+    </nav>
     <main class="container">
       <section id="hero">
         <div class="header-container">
@@ -97,16 +110,16 @@ import siteManifest from '../assets/site.webmanifest';
           </ul>
         </section>
 
-		<section id="mentors">
-			<h2>Mentorship Acknowledgements</h2>
-			<p>I'm grateful for the guidance, wisdom, and support of the many mentors I've had.</p>
-			<ul class="simple-list">
-			  <li>Professor Yiqiao Zhong and Rheeya Uppaal for all of their mentorship and kindness.</li>
-			  <li>Ben Hayum, Jeremy Kintana, and everyone else at WAISI for their wisdom, guidance, and friendship.</li>
-			  <li>John Bradley, Dan Bielski, Sean Kern, Zachary Ludvigson, and the many other wonderful coaches and teachers I've had.</li>
-			  <li>My parents, grandparents, and entire family, who taught me a love of learning and the value of truth.</li>
-			</ul>
-		</section>
+        <section id="mentors">
+          <h2>Mentorship Acknowledgements</h2>
+          <p>I'm grateful for the guidance, wisdom, and support of the many mentors I've had.</p>
+          <ul class="simple-list">
+            <li>Professor Yiqiao Zhong and Rheeya Uppaal for all of their mentorship and kindness.</li>
+            <li>Ben Hayum, Jeremy Kintana, and everyone else at WAISI for their wisdom, guidance, and friendship.</li>
+            <li>John Bradley, Dan Bielski, Sean Kern, Zachary Ludvigson, and the many other wonderful coaches and teachers I've had.</li>
+            <li>My parents, grandparents, and entire family, who taught me a love of learning and the value of truth.</li>
+          </ul>
+        </section>
 
         <section id="personal">
           <h2>Personal</h2>
@@ -119,19 +132,10 @@ import siteManifest from '../assets/site.webmanifest';
             <li>Minnesota sports teams. Maybe this year we'll finally win something...</li>
           </ul>
         </section>
-
-        <h2 class="links-heading">Connect With Me</h2>
-        <ul class="social-links">
-          <li><a href="https://www.linkedin.com/in/william-l-anderson-a853b92aa/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="https://github.com/wlanderson0" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="https://wlandersons.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a></li>
-          <li><a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
-        </ul>
-      </section>
     </main>
     
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
 		const emailContainer = document.getElementById('email-container');
 		if (emailContainer) {
 		  const user = 'hello';

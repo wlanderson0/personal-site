@@ -1,285 +1,309 @@
 /* Base Styles */
 :root {
-  --primary-color: #526e8e;
-  --bg-color: #fafafa;
-  --text-color: #333333;
-  --accent-color: #e6e6e6;
-  --transition: all 0.3s ease;
+    --primary-color: #526e8e;
+    --bg-color: #fafafa;
+    --text-color: #333333;
+    --accent-color: #e6e6e6;
+    --transition: all 0.3s ease;
+    --nav-height: 70px;
 }
 
 /* Typography and Global Elements */
 body {
-  margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.8;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.8;
+    padding-top: var(--nav-height);
 }
 
 a {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: var(--transition);
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
 }
 
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-  letter-spacing: 0.5px;
-  color: var(--primary-color);
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    color: var(--primary-color);
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    background-color: rgba(250, 250, 250, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-left: 2rem;
+}
+
+.brand-short {
+    display: none;
+}
+
+.brand-full {
+    display: inline;
+}
+
+.navbar-brand:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+.navbar-links li a {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    border-radius: 25px;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.navbar-links li a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(82, 110, 142, 0.3);
+}
+
+/* Mobile Navigation */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
 }
 
 /* Layout and Container */
 .container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
 }
 
 /* Hero Section */
 #hero {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem 0;
-  border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .header-container {
-  display: flex;
-  align-items: flex-start;
-  gap: 2.5rem; /* Increased from 2rem to provide more spacing between image and text */
-  margin-bottom: 1rem; /* Increased from 2rem */
-  flex-direction: row; /* Ensure the elements are laid out horizontally */
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5rem;
+    margin-bottom: 1rem;
+    flex-direction: row;
 }
 
 .header-text {
-  flex: 1;
+    flex: 1;
 }
 
 #hero h1 {
-  font-size: 3rem; /* Increased from 2.5rem */
-  margin: 0 0 0; /* Reduced bottom margin */
-  line-height: 150%;
+    font-size: 3rem;
+    margin: 0 0 0;
+    line-height: 150%;
 }
 
 #hero p {
-  font-size: 1.2rem; /* Increased from 1.1rem */
-  line-height: 1.7;
-  color: #333333;
-  color: #333333;
-  margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #333333;
+    margin: 0;
 }
 
 /* Contact Information */
 .contact-info {
-  margin: 0 0 0.5rem 0; /* Reduced bottom margin for less gap */
-  font-size: 1.3rem;
-  color: #333333; /* Changed to charcoal color */
-  text-align: center;
-  display: flex; /* Added to allow items to be side by side */
-  align-items: center; /* Vertical alignment */
-  gap: 0.3rem; /* Small gap between label and email */
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    color: #333333;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
 }
 
 .contact-info::before {
-  content: "Email: "; /* Add the "Email:" label */
-  color: #333333; /* Charcoal color */
-  font-weight: 500;
+    content: "Email: ";
+    color: #333333;
+    font-weight: 500;
 }
 
 /* Email styling */
-/* Email styling */
 .email-link {
-  text-decoration: none;
-  font-weight: 500;
+    text-decoration: none;
+    font-weight: 500;
 }
 
 .email-link:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .email-part {
-  color: var(--primary-color); /* Blue color for email parts */
+    color: var(--primary-color);
 }
 
 .email-separator {
-  color: #333333; /* Charcoal color for [at] and [dot] */
-}
-
-/* Update the existing contact-info styling */
-.contact-info {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.3rem;
-  color: #333333;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.email-part {
-  color: var(--primary-color); /* Blue color for email parts */
-}
-
-.email-separator {
-  color: #333333; /* Charcoal color for [at] and [dot] */
-}
-
-/* Update the existing contact-info styling */
-.contact-info {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.3rem;
-  color: #333333;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
+    color: #333333;
 }
 
 /* Profile Image */
 .profile-pic {
-  width: 240px; /* Increased from 180px */
-  height: auto; /* Allow height to adjust based on the original aspect ratio */
-  object-fit: contain; /* Ensure the image maintains its aspect ratio */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border: 4px solid white;
-  transition: var(--transition);
+    width: 240px;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 4px solid white;
+    transition: var(--transition);
 }
 
 .profile-pic:hover {
-  transform: scale(1.02);
+    transform: scale(1.02);
 }
 
-/* Section Styles - Updated */
+/* Section Styles */
 #research {
-  padding-top: 2rem;
-  border-top: 1px solid #e0e0e0;
+    padding-top: 2rem;
+    border-top: 1px solid #e0e0e0;
 }
 
 #education, #research, #leadership, #policy-work, #awards, #mentors, #personal, #talks {
-  margin: 1rem 0;
-  padding-bottom: 1rem; /* Reduced from 1.5rem for smaller vertical gap */
-  border-bottom: 1px solid #e0e0e0;
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-/* Section headers - Updated to be larger */
+/* Section headers */
 #education h2, #research h2, #leadership h2, #policy-work h2, #awards h2, #mentors h2, #personal h2, #talks h2 {
-  font-size: 2.2rem; /* Increased from 2rem */
-  margin-bottom: 0.3rem; /* Slightly reduced for tighter layout */
-  margin-top: 0.3rem; /* Slightly reduced for tighter layout */
-  text-align: left;
+    font-size: 2.2rem;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
+    text-align: left;
 }
 
-#education p, #research p, #leadership p, #policy-work p, #awards p, #mentors p, #personal p, #talks p{
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+#education p, #research p, #leadership p, #policy-work p, #awards p, #mentors p, #personal p, #talks p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
 }
 
 .simple-list {
-  list-style-type: disc;
-  padding-left: 2rem;
-  margin-top: 0.5rem;
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin-top: 0.5rem;
 }
 
 .simple-list li {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.6;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
 }
 
-/* Links Section Heading */
-.links-heading {
-  font-size: 2.2rem;
-  text-align: center;
-  margin: 0.5rem 0 0.5rem;
-}
+/* Brand name responsive change at larger breakpoint */
+@media (max-width: 950px) {
+    .brand-full {
+        display: none;
+    }
 
-/* Social Links */
-.social-links {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
-  margin-top: 1rem;
-}
-
-.social-links li a {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
-  border-radius: 30px;
-  transition: var(--transition);
-}
-
-.social-links li a:hover {
-  background-color: var(--primary-color);
-  color: white;
-  text-decoration: none;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(82, 110, 142, 0.2);
+    .brand-short {
+        display: inline;
+    }
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .container {
-    padding: 2rem 1rem;
-  }
-  
-  .header-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1.5rem;
-  }
-  
-  .profile-pic {
-    width: 160px;
-    /* No fixed height to maintain aspect ratio */
-    order: 0; /* Reset the order on mobile */
-  }
-  
-  #hero h1 {
-    font-size: 2rem;
-  }
-  
-  /* Updated section headers for mobile */
-  #education h2, #research h2, #leadership h2, #policy-work h2, #awards h2, #mentors h2, #personal h2, #talks h2{
-    font-size: 1.8rem;
-    text-align: center;
-  }
-  
-  /* Updated section headers for mobile */
-  #education h2, #research h2, #leadership h2, #policy-work h2, #awards h2, #mentors h2, #personal h2, #talks h2{
-    font-size: 1.8rem;
-    text-align: center;
-  }
-  
-  .social-links {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-  }
+@media (max-width: 800px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    .navbar-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(250, 250, 250, 0.98);
+        flex-direction: column;
+        padding: 1rem;
+        border-bottom: 1px solid #e0e0e0;
+        gap: 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .container {
+        padding: 2rem 1rem;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .profile-pic {
+        width: 160px;
+        order: 0;
+    }
+
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    #education h2, #research h2, #leadership h2, #policy-work h2, #awards h2, #mentors h2, #personal h2, #talks h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
 }
 
-@media (max-width: 480px) {  
-  .social-links {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-  
-  .social-links li {
-    width: 100%;
-  }
-  
-  .social-links li a {
-    display: block;
-    text-align: center;
-  }
+@media (max-width: 480px) {
+    .navbar-links li a {
+        width: 100%;
+        text-align: center;
+        padding: 0.6rem 1rem;
+    }
 }
