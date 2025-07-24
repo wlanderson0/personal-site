@@ -29,7 +29,7 @@ import siteManifest from '../assets/site.webmanifest';
             <span class="brand-full">William L. Anderson</span>
             <span class="brand-short">Will Anderson</span>
         </a>
-        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
         <ul class="navbar-links" id="navbarLinks">
             <li><a href="https://www.linkedin.com/in/william-l-anderson-a853b92aa/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
             <li><a href="https://github.com/wlanderson0" target="_blank" rel="noopener noreferrer">GitHub</a></li>
@@ -135,51 +135,71 @@ import siteManifest from '../assets/site.webmanifest';
     </main>
     
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-		const emailContainer = document.getElementById('email-container');
-		if (emailContainer) {
-		  const user = 'hello';
-		  const domain = 'wlanderson';
-		  const topLevelDomain = 'com'
-		  
-		  // Create the email link container
-		  const link = document.createElement('a');
-		  link.href = 'mailto:' + user + '@' + domain + '.' + topLevelDomain;
-		  link.className = 'email-link';
-		  
-		  // Create spans for each part with appropriate classes
-		  const userSpan = document.createElement('span');
-		  userSpan.textContent = user;
-		  userSpan.className = 'email-part';
-		  
-		  const atSpan = document.createElement('span');
-		  atSpan.textContent = ' [at] ';
-		  atSpan.className = 'email-separator';
-		  
-		  const domainSpan = document.createElement('span');
-		  domainSpan.textContent = domain;
-		  domainSpan.className = 'email-part';
-		  
-		  const dotSpan = document.createElement('span');
-		  dotSpan.textContent = ' [dot] ';
-		  dotSpan.className = 'email-separator';
-		  
-		  const tldSpan = document.createElement('span');
-		  tldSpan.textContent = topLevelDomain;
-		  tldSpan.className = 'email-part';
-		  
-		  // Append all components to the link
-		  link.appendChild(userSpan);
-		  link.appendChild(atSpan);
-		  link.appendChild(domainSpan);
-		  link.appendChild(dotSpan);
-		  link.appendChild(tldSpan);
-		  
-		  // Clear any existing content
-		  emailContainer.innerHTML = '';
-		  emailContainer.appendChild(link);
-		}
-	  });
+      document.addEventListener('DOMContentLoaded', function() {
+          // Email functionality (keep your existing code)
+          const emailContainer = document.getElementById('email-container');
+          if (emailContainer) {
+            const user = 'hello';
+            const domain = 'wlanderson';
+            const topLevelDomain = 'com'
+            
+            const link = document.createElement('a');
+            link.href = 'mailto:' + user + '@' + domain + '.' + topLevelDomain;
+            link.className = 'email-link';
+            
+            const userSpan = document.createElement('span');
+            userSpan.textContent = user;
+            userSpan.className = 'email-part';
+            
+            const atSpan = document.createElement('span');
+            atSpan.textContent = ' [at] ';
+            atSpan.className = 'email-separator';
+            
+            const domainSpan = document.createElement('span');
+            domainSpan.textContent = domain;
+            domainSpan.className = 'email-part';
+            
+            const dotSpan = document.createElement('span');
+            dotSpan.textContent = ' [dot] ';
+            dotSpan.className = 'email-separator';
+            
+            const tldSpan = document.createElement('span');
+            tldSpan.textContent = topLevelDomain;
+            tldSpan.className = 'email-part';
+            
+            link.appendChild(userSpan);
+            link.appendChild(atSpan);
+            link.appendChild(domainSpan);
+            link.appendChild(dotSpan);
+            link.appendChild(tldSpan);
+            
+            emailContainer.innerHTML = '';
+            emailContainer.appendChild(link);
+          }
+
+          // Mobile menu functionality (FIXED VERSION)
+          const mobileToggle = document.getElementById('mobileMenuToggle');
+          const navbarLinks = document.getElementById('navbarLinks');
+          
+          if (mobileToggle && navbarLinks) {
+            // Add click event listener to the mobile toggle button
+            mobileToggle.addEventListener('click', function() {
+              navbarLinks.classList.toggle('active');
+            });
+          }
+
+          // Close mobile menu when clicking outside
+          document.addEventListener('click', function(event) {
+            if (
+              navbarLinks &&
+              mobileToggle &&
+              !navbarLinks.contains(event.target) &&
+              !mobileToggle.contains(event.target)
+            ) {
+              navbarLinks.classList.remove('active');
+            }
+          });
+        });
     </script>
   </body>
 </html>
