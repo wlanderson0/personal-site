@@ -1,0 +1,218 @@
+---
+import '../styles/global.css';
+// Import favicon assets
+import favicon from '../assets/favicon.svg';
+import favicon96 from '../assets/favicon-96x96.png';
+import faviconIco from '../assets/favicon.ico';
+import appleIcon from '../assets/apple-touch-icon.png';
+// Import site manifest
+import siteManifest from '../assets/site.webmanifest';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poetry - William L. Anderson</title>
+    <link rel="icon" type="image/png" href={favicon96.src} sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href={favicon.src} />
+    <link rel="shortcut icon" href={faviconIco.src} />
+    <link rel="apple-touch-icon" sizes="180x180" href={appleIcon.src} />
+    <link rel="manifest" href={siteManifest.src} />
+  </head>
+  <body>
+   <nav class="navbar">
+        <a href="/" class="navbar-brand">
+            <span class="brand-full">William L. Anderson</span>
+            <span class="brand-short">Will Anderson</span>
+        </a>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+        <ul class="navbar-links" id="navbarLinks">
+            <li><a href="https://www.linkedin.com/in/william-l-anderson-a853b92aa/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/wlanderson0" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://wlandersons.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a></li>
+            <li><a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+      <section id="secret-header">
+        <p class="secret-intro">Here are some poems I know by heart:</p>
+      </section>
+
+      <article class="poem">
+        <h2 class="poem-title">Sonnet 18</h2>
+        <p class="poem-author">William Shakespeare</p>
+        <div class="poem-text">
+          <p>Shall I compare thee to a summer's day?</p>
+          <p>Thou art more lovely and more temperate:</p>
+          <p>Rough winds do shake the darling buds of May,</p>
+          <p>And summer's lease hath all too short a date;</p>
+          <p>Sometime too hot the eye of heaven shines,</p>
+          <p>And often is his gold complexion dimm'd;</p>
+          <p>And every fair from fair sometime declines,</p>
+          <p>By chance or nature's changing course untrimm'd;</p>
+          <p>But thy eternal summer shall not fade,</p>
+          <p>Nor lose possession of that fair thou ow'st;</p>
+          <p>Nor shall death brag thou wander'st in his shade,</p>
+          <p>When in eternal lines to time thou grow'st:</p>
+          <p class="poem-couplet">So long as men can breathe or eyes can see,</p>
+          <p class="poem-couplet">So long lives this, and this gives life to thee.</p>
+        </div>
+      </article>
+
+      <article class="poem">
+        <h2 class="poem-title">Sonnet 29</h2>
+        <p class="poem-author">William Shakespeare</p>
+        <div class="poem-text">
+          <p>When, in disgrace with fortune and men's eyes,</p>
+          <p>I all alone beweep my outcast state,</p>
+          <p>And trouble deaf heaven with my bootless cries,</p>
+          <p>And look upon myself and curse my fate,</p>
+          <p>Wishing me like to one more rich in hope,</p>
+          <p>Featured like him, like him with friends possessed,</p>
+          <p>Desiring this man's art and that man's scope,</p>
+          <p>With what I most enjoy contented least;</p>
+          <p>Yet in these thoughts myself almost despising,</p>
+          <p>Haply I think on thee, and then my state,</p>
+          <p>(Like to the lark at break of day arising</p>
+          <p>From sullen earth) sings hymns at heaven's gate;</p>
+          <p class="poem-couplet">For thy sweet love remembered such wealth brings</p>
+          <p class="poem-couplet">That then I scorn to change my state with kings.</p>
+        </div>
+      </article>
+
+      <article class="poem">
+        <h2 class="poem-title">Sonnet 36</h2>
+        <p class="poem-author">William Shakespeare</p>
+        <div class="poem-text">
+          <p>Let me confess that we two must be twain,</p>
+          <p>Although our undivided loves are one:</p>
+          <p>So shall those blots that do with me remain,</p>
+          <p>Without thy help, by me be borne alone.</p>
+          <p>In our two loves there is but one respect,</p>
+          <p>Though in our lives a separable spite,</p>
+          <p>Which though it alter not love's sole effect,</p>
+          <p>Yet doth it steal sweet hours from love's delight.</p>
+          <p>I may not evermore acknowledge thee,</p>
+          <p>Lest my bewailed guilt should do thee shame,</p>
+          <p>Nor thou with public kindness honour me,</p>
+          <p>Unless thou take that honour from thy name:</p>
+          <p class="poem-couplet">But do not so; I love thee in such sort,</p>
+          <p class="poem-couplet">As, thou being mine, mine is thy good report.</p>
+        </div>
+      </article>
+
+      <article class="poem">
+        <h2 class="poem-title">Sonnet 43</h2>
+        <p class="poem-author">William Shakespeare</p>
+        <div class="poem-text">
+          <p>When most I wink, then do mine eyes best see,</p>
+          <p>For all the day they view things unrespected;</p>
+          <p>But when I sleep, in dreams they look on thee,</p>
+          <p>And darkly bright, are bright in dark directed.</p>
+          <p>Then thou, whose shadow shadows doth make bright,</p>
+          <p>How would thy shadow's form form happy show</p>
+          <p>To the clear day with thy much clearer light,</p>
+          <p>When to unseeing eyes thy shade shines so!</p>
+          <p>How would, I say, mine eyes be blessed made</p>
+          <p>By looking on thee in the living day,</p>
+          <p>When in dead night thy fair imperfect shade</p>
+          <p>Through heavy sleep on sightless eyes doth stay!</p>
+          <p class="poem-couplet">All days are nights to see till I see thee,</p>
+          <p class="poem-couplet">And nights bright days when dreams do show thee me.</p>
+        </div>
+      </article>
+
+      <article class="poem">
+        <h2 class="poem-title">Sonnet 55</h2>
+        <p class="poem-author">William Shakespeare</p>
+        <div class="poem-text">
+          <p>Not marble, nor the gilded monuments</p>
+          <p>Of princes, shall outlive this powerful rhyme;</p>
+          <p>But you shall shine more bright in these contents</p>
+          <p>Than unswept stone, besmeared with sluttish time.</p>
+          <p>When wasteful war shall statues overturn,</p>
+          <p>And broils root out the work of masonry,</p>
+          <p>Nor Mars his sword nor war's quick fire shall burn</p>
+          <p>The living record of your memory.</p>
+          <p>'Gainst death and all-oblivious enmity</p>
+          <p>Shall you pace forth; your praise shall still find room</p>
+          <p>Even in the eyes of all posterity</p>
+          <p>That wear this world out to the ending doom.</p>
+          <p class="poem-couplet">So, till the judgement that yourself arise,</p>
+          <p class="poem-couplet">You live in this, and dwell in lovers' eyes.</p>
+        </div>
+      </article>
+
+      <article class="poem">
+        <h2 class="poem-title">Sonnet 116</h2>
+        <p class="poem-author">William Shakespeare</p>
+        <div class="poem-text">
+          <p>Let me not to the marriage of true minds</p>
+          <p>Admit impediments. Love is not love</p>
+          <p>Which alters when it alteration finds,</p>
+          <p>Or bends with the remover to remove:</p>
+          <p>O no! it is an ever-fixed mark</p>
+          <p>That looks on tempests and is never shaken;</p>
+          <p>It is the star to every wandering bark,</p>
+          <p>Whose worth's unknown, although his height be taken.</p>
+          <p>Love's not Time's fool, though rosy lips and cheeks</p>
+          <p>Within his bending sickle's compass come:</p>
+          <p>Love alters not with his brief hours and weeks,</p>
+          <p>But bears it out even to the edge of doom.</p>
+          <p class="poem-couplet">If this be error and upon me proved,</p>
+          <p class="poem-couplet">I never writ, nor no man ever loved.</p>
+        </div>
+      </article>
+
+      <article class="poem">
+        <h2 class="poem-title">The New Colossus</h2>
+        <p class="poem-author">Emma Lazarus</p>
+        <div class="poem-text">
+          <p>Not like the brazen giant of Greek fame,</p>
+          <p>With conquering limbs astride from land to land;</p>
+          <p>Here at our sea-washed, sunset gates shall stand</p>
+          <p>A mighty woman with a torch, whose flame</p>
+          <p>Is the imprisoned lightning, and her name</p>
+          <p>Mother of Exiles. From her beacon-hand</p>
+          <p>Glows world-wide welcome; her mild eyes command</p>
+          <p>The air-bridged harbor that twin cities frame.</p>
+          <p>"Keep, ancient lands, your storied pomp!" cries she</p>
+          <p>With silent lips. "Give me your tired, your poor,</p>
+          <p>Your huddled masses yearning to breathe free,</p>
+          <p>The wretched refuse of your teeming shore.</p>
+          <p>Send these, the homeless, tempest-tost to me,</p>
+          <p>I lift my lamp beside the golden door!"</p>
+        </div>
+      </article>
+
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          // Mobile menu functionality
+          const mobileToggle = document.getElementById('mobileMenuToggle');
+          const navbarLinks = document.getElementById('navbarLinks');
+
+          if (mobileToggle && navbarLinks) {
+            // Add click event listener to the mobile toggle button
+            mobileToggle.addEventListener('click', function() {
+              navbarLinks.classList.toggle('active');
+            });
+          }
+
+          // Close mobile menu when clicking outside
+          document.addEventListener('click', function(event) {
+            if (
+              navbarLinks &&
+              mobileToggle &&
+              !navbarLinks.contains(event.target as Node) &&
+              !mobileToggle.contains(event.target as Node)
+            ) {
+              navbarLinks.classList.remove('active');
+            }
+          });
+        });
+    </script>
+  </body>
+</html>
