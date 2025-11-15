@@ -1,0 +1,102 @@
+---
+import '../styles/global.css';
+// Import favicon assets
+import favicon from '../assets/favicon.svg';
+import favicon96 from '../assets/favicon-96x96.png';
+import faviconIco from '../assets/favicon.ico';
+import appleIcon from '../assets/apple-touch-icon.png';
+// Import site manifest
+import siteManifest from '../assets/site.webmanifest';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Now - William L. Anderson</title>
+    <link rel="icon" type="image/png" href={favicon96.src} sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href={favicon.src} />
+    <link rel="shortcut icon" href={faviconIco.src} />
+    <link rel="apple-touch-icon" sizes="180x180" href={appleIcon.src} />
+    <link rel="manifest" href={siteManifest.src} />
+  </head>
+  <body>
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">
+            <span class="brand-full">William L. Anderson</span>
+            <span class="brand-short">Will Anderson</span>
+        </a>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+        <ul class="navbar-links" id="navbarLinks">
+            <li><a href="/">Home</a></li>
+            <li><a href="/now">Now</a></li>
+            <li><a href="https://www.linkedin.com/in/william-l-anderson-a853b92aa/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/wlanderson0" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://wlandersons.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a></li>
+            <li><a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+      <section id="now">
+        <h1>Now</h1>
+        <p>This is a "<a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">now page</a>," inspired by Derek Sivers. It's a snapshot of what I'm currently focused on and thinking about.</p>
+        <p style="font-style: italic; color: #666;">Last updated [DATE], from [LOCATION].</p>
+
+        <h2>Current Focus</h2>
+        <ul class="simple-list">
+          <li>Preparing for my <a href="https://www.matsprogram.org/" target="_blank" rel="noopener noreferrer">MATS</a> program starting in January 2026, focusing on multiagent security research with Dr. Christian Schroeder de Witt</li>
+          <li>Continuing my research affiliation with UChicago <a href="https://xrisk.uchicago.edu/" target="_blank" rel="noopener noreferrer">XLab</a> and the <a href="https://pages.stat.wisc.edu/~zhong35/" target="_blank" rel="noopener noreferrer">Yiqiao Zhong</a> Lab at UW–Madison</li>
+          <li>Working on papers about superintelligence deterrence and US-ROK relations amid export controls</li>
+          <li>Transitioning from Director to Advisor role at the <a href="https://waisi.org/" target="_blank" rel="noopener noreferrer">Wisconsin AI Safety Initiative</a></li>
+        </ul>
+
+        <h2>Learning & Reading</h2>
+        <ul class="simple-list">
+          <li>Deepening my understanding of multiagent systems and RL post-training</li>
+          <li>Following developments in AI security, compute governance, and American industrial policy</li>
+          <li>[Add current reading - books, papers, etc.]</li>
+        </ul>
+
+        <h2>Personal</h2>
+        <ul class="simple-list">
+          <li>[Add current personal activities - swimming, outdoor activities, etc.]</li>
+          <li>[Add social connections and how you're maintaining relationships]</li>
+          <li>[Add anything else you're doing or thinking about]</li>
+        </ul>
+
+        <h2>Goals for This Period</h2>
+        <ul class="simple-list">
+          <li>[Add 2-3 specific goals or intentions]</li>
+        </ul>
+
+        <p style="margin-top: 2rem;"><a href="/">← Back to home</a></p>
+      </section>
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          // Mobile menu functionality
+          const mobileToggle = document.getElementById('mobileMenuToggle');
+          const navbarLinks = document.getElementById('navbarLinks');
+
+          if (mobileToggle && navbarLinks) {
+            mobileToggle.addEventListener('click', function() {
+              navbarLinks.classList.toggle('active');
+            });
+          }
+
+          // Close mobile menu when clicking outside
+          document.addEventListener('click', function(event) {
+            if (
+              navbarLinks &&
+              mobileToggle &&
+              !navbarLinks.contains(event.target as Node) &&
+              !mobileToggle.contains(event.target as Node)
+            ) {
+              navbarLinks.classList.remove('active');
+            }
+          });
+        });
+    </script>
+  </body>
+</html>
