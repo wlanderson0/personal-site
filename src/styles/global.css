@@ -114,14 +114,32 @@ h1, h2, h3, h4, h5, h6 {
 .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 2rem 2rem 1.5rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 1rem 0 0 0;
+    color: #666;
+    font-size: 0.85rem;
+    margin-top: 0;
+}
+
+.site-footer p {
+    margin: 0;
 }
 
 /* Hero Section */
 #hero {
     display: flex;
     flex-direction: column;
-    padding: 2rem 0;
+    padding: 1rem 0 1.25rem 0;
     border-bottom: 1px solid #e0e0e0;
 }
 
@@ -129,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: flex-start;
     gap: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     flex-direction: row;
 }
 
@@ -138,14 +156,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin: 0 0 0;
-    line-height: 150%;
+    line-height: 1.3;
 }
 
 #hero p {
-    font-size: 1.2rem;
-    line-height: 1.7;
+    font-size: 1.05rem;
+    line-height: 1.6;
     color: #333333;
     margin: 0;
 }
@@ -153,7 +171,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Contact Information */
 .contact-info {
     margin: 0 0 0.5rem 0;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #333333;
     display: flex;
     align-items: center;
@@ -200,39 +218,39 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Section Styles */
 #research {
-    padding-top: 2rem;
+    padding-top: 1.25rem;
     border-top: 1px solid #e0e0e0;
 }
 
 #education, #research, #leadership, #policy-work, #awards, #mentors, #personal, #talks {
-    margin: 1rem 0;
-    padding-bottom: 1rem;
+    margin: 0.75rem 0;
+    padding-bottom: 0.75rem;
     border-bottom: 1px solid #e0e0e0;
 }
 
 /* Section headers */
 #education h2, #research h2, #leadership h2, #policy-work h2, #awards h2, #mentors h2, #personal h2, #talks h2 {
-    font-size: 2.2rem;
-    margin-bottom: 0.3rem;
-    margin-top: 0.3rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+    margin-top: 0.25rem;
     text-align: left;
 }
 
 #education p, #research p, #leadership p, #policy-work p, #awards p, #mentors p, #personal p, #talks p {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
 }
 
 .simple-list {
     list-style-type: disc;
     padding-left: 2rem;
-    margin-top: 0.5rem;
+    margin-top: 0.35rem;
 }
 
 .simple-list li {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
 }
 
 /* Brand name responsive change at larger breakpoint */
