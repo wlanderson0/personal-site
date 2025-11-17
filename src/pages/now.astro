@@ -23,42 +23,51 @@ import siteManifest from '../assets/site.webmanifest';
   <body>
     <style>
       #now {
-        padding: 1rem 0 0 0;
+        padding: 0;
       }
-      #now h1 {
+      .now-intro {
+        padding: 2rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        margin-bottom: 1rem;
+      }
+      .now-intro h1 {
         margin-bottom: 0.75rem;
         margin-top: 0;
         font-size: 2.5rem;
         line-height: 1.3;
       }
-      #now > p:first-of-type {
-        padding-bottom: 0.75rem;
-        border-bottom: 1px solid #e0e0e0;
-        margin-bottom: 0.75rem;
+      .now-intro p:last-child {
+        margin-bottom: 0;
       }
-      #now h2 {
+      .now-section {
+        margin: 1rem 0;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+      .now-section h2 {
         margin-top: 0;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.75rem;
         padding-bottom: 0;
-        padding-top: 1.25rem;
-        border-top: 1px solid #e0e0e0;
-        font-size: 1.8rem;
-      }
-      #now h2:first-of-type {
-        border-top: 1px solid #e0e0e0;
+        padding-top: 0;
+        border-top: none;
+        font-size: 2rem;
       }
       #now p {
-        margin-bottom: 0.35rem;
-        font-size: 1rem;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
       }
-      #now ul {
+      .now-section ul {
         margin-bottom: 0.75rem;
-        margin-top: 0.35rem;
+        margin-top: 0.75rem;
       }
-      #now ul li {
-        margin-bottom: 0.35rem;
-        font-size: 0.95rem;
-        line-height: 1.5;
+      .now-section ul li {
+        margin-bottom: 0.75rem;
+        font-size: 1.05rem;
+        line-height: 1.7;
       }
       #now .site-footer {
         border-top: 1px solid #e0e0e0;
@@ -83,36 +92,46 @@ import siteManifest from '../assets/site.webmanifest';
     </nav>
     <main class="container">
       <section id="now">
-        <h1>What am I up to now?</h1>
-        <p>This is a "<a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">now page</a>." Credit to my dear friend <a href="https://jeremykintana.com" target="_blank" rel="noopener noreferrer">Jeremy</a> for inspiring this.</p>
-        <p style="font-style: italic; color: #666;">Last updated 11/17/25, from my apartment in Madison, WI (which I'll soon be leaving).</p>
+        <div class="now-intro">
+          <h1>What am I up to now?</h1>
+          <p>This is a "<a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">now page</a>." Credit to my dear friend <a href="https://jeremykintana.com" target="_blank" rel="noopener noreferrer">Jeremy</a> for inspiring this.</p>
+          <p style="font-style: italic; color: #666;">Last updated 11/17/25, from my apartment in Madison, WI (which I'll soon be leaving).</p>
+        </div>
 
-        <h2>Current Focus</h2>
-        <ul class="simple-list">
-          <li>Preparing for my <a href="https://www.matsprogram.org/" target="_blank" rel="noopener noreferrer">MATS</a> program starting in January 2026, focusing on multiagent security research with Dr. Christian Schroeder de Witt</li>
-          <li>Continuing my research affiliation with UChicago <a href="https://xrisk.uchicago.edu/" target="_blank" rel="noopener noreferrer">XLab</a> and the <a href="https://pages.stat.wisc.edu/~zhong35/" target="_blank" rel="noopener noreferrer">Yiqiao Zhong</a> Lab at UW–Madison</li>
-          <li>Working on papers about superintelligence deterrence and US-ROK relations amid export controls</li>
-          <li>Transitioning from Director to Advisor role at the <a href="https://waisi.org/" target="_blank" rel="noopener noreferrer">Wisconsin AI Safety Initiative</a></li>
-        </ul>
+        <div class="now-section">
+          <h2>Current Focus</h2>
+          <ul class="simple-list">
+            <li>Preparing for my <a href="https://www.matsprogram.org/" target="_blank" rel="noopener noreferrer">MATS</a> program starting in January 2026, focusing on multiagent security research with Dr. Christian Schroeder de Witt</li>
+            <li>Continuing my research affiliation with UChicago <a href="https://xrisk.uchicago.edu/" target="_blank" rel="noopener noreferrer">XLab</a> and the <a href="https://pages.stat.wisc.edu/~zhong35/" target="_blank" rel="noopener noreferrer">Yiqiao Zhong</a> Lab at UW–Madison</li>
+            <li>Working on papers about superintelligence deterrence and US-ROK relations amid export controls</li>
+            <li>Transitioning from Director to Advisor role at the <a href="https://waisi.org/" target="_blank" rel="noopener noreferrer">Wisconsin AI Safety Initiative</a></li>
+          </ul>
+        </div>
 
-        <h2>Learning & Reading</h2>
-        <ul class="simple-list">
-          <li>Deepening my understanding of multiagent systems and RL post-training</li>
-          <li>Following developments in AI security, compute governance, and American industrial policy</li>
-          <li>[Add current reading - books, papers, etc.]</li>
-        </ul>
+        <div class="now-section">
+          <h2>Learning & Reading</h2>
+          <ul class="simple-list">
+            <li>Deepening my understanding of multiagent systems and RL post-training</li>
+            <li>Following developments in AI security, compute governance, and American industrial policy</li>
+            <li>[Add current reading - books, papers, etc.]</li>
+          </ul>
+        </div>
 
-        <h2>Personal</h2>
-        <ul class="simple-list">
-          <li>[Add current personal activities - swimming, outdoor activities, etc.]</li>
-          <li>[Add social connections and how you're maintaining relationships]</li>
-          <li>[Add anything else you're doing or thinking about]</li>
-        </ul>
+        <div class="now-section">
+          <h2>Personal</h2>
+          <ul class="simple-list">
+            <li>[Add current personal activities - swimming, outdoor activities, etc.]</li>
+            <li>[Add social connections and how you're maintaining relationships]</li>
+            <li>[Add anything else you're doing or thinking about]</li>
+          </ul>
+        </div>
 
-        <h2>Goals for This Period</h2>
-        <ul class="simple-list">
-          <li>[Add 2-3 specific goals or intentions]</li>
-        </ul>
+        <div class="now-section">
+          <h2>Goals for This Period</h2>
+          <ul class="simple-list">
+            <li>[Add 2-3 specific goals or intentions]</li>
+          </ul>
+        </div>
 
         <p style="margin-top: 2rem;"><a href="/">← Back to home</a></p>
       </section>
