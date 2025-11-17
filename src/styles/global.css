@@ -8,6 +8,10 @@
 }
 
 /* Typography and Global Elements */
+html {
+    overflow-y: scroll;
+}
+
 body {
     margin: 0;
     font-family: Georgia, 'Times New Roman', serif;
