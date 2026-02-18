@@ -1,13 +1,10 @@
 :root {
-    --primary-color: #2d5a27; /* Bamboo green */
-    --bg-color: #f5f9f3; /* Soft bamboo-tinted white */
-    --text-color: #1a1a1a; /* Panda black */
-    --accent-color: #a8d5a2; /* Light bamboo */
-    --panda-black: #1a1a1a;
-    --panda-white: #fefefe;
-    --bamboo-dark: #1e4620;
-    --bamboo-light: #7cb342;
-    --bamboo-leaf: #4a7c47;
+    --primary-color: #1e3a5f;
+    --bg-color: #fafafa;
+    --text-color: #2d2d2d;
+    --accent-color: #e2e8f0;
+    --secondary-color: #64748b;
+    --border-color: #cbd5e1;
     --transition: all 0.3s ease;
     --nav-height: 70px;
 }
@@ -34,7 +31,7 @@ a {
 
 a:hover {
     text-decoration: underline;
-    color: var(--bamboo-dark);
+    color: #142a47;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -43,25 +40,23 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color);
 }
 
-
-/* Navigation Bar - Bamboo styled */
+/* Navigation Bar */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     height: var(--nav-height);
-    background: linear-gradient(180deg, rgba(245, 249, 243, 0.98) 0%, rgba(168, 213, 162, 0.3) 100%);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 3px solid var(--bamboo-leaf);
+    border-bottom: 1px solid var(--border-color);
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
-    box-shadow: 0 2px 15px rgba(45, 90, 39, 0.15);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
-
 
 .navbar-brand {
     font-size: 1.5rem;
@@ -72,11 +67,6 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-}
-
-.navbar-brand::before {
-    content: '🎋';
-    font-size: 1.3rem;
 }
 
 .brand-short {
@@ -117,9 +107,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--primary-color);
     color: white;
     text-decoration: none;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(45, 90, 39, 0.3);
-    border-color: var(--bamboo-dark);
+    border-color: var(--primary-color);
 }
 
 /* Mobile Navigation */
@@ -155,40 +143,17 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.85rem;
 }
 
-.site-footer p::before {
-    content: '🐼 ';
-}
-
-.site-footer p::after {
-    content: ' 🎋';
-}
-
-/* Hero Section - Panda Card Style */
+/* Hero Section */
 #hero {
     display: flex;
     flex-direction: column;
     padding: 2rem;
-    background: linear-gradient(135deg, var(--panda-white) 0%, #e8f5e9 100%);
-    border-radius: 20px;
-    box-shadow:
-        0 4px 20px rgba(45, 90, 39, 0.15),
-        inset 0 0 0 3px var(--accent-color);
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
     margin-bottom: 1rem;
     position: relative;
     overflow: hidden;
-}
-
-#hero::before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 150px;
-    height: 150px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cellipse cx='50' cy='50' rx='45' ry='40' fill='white' stroke='%231a1a1a' stroke-width='3'/%3E%3Cellipse cx='25' cy='25' rx='18' ry='15' fill='%231a1a1a'/%3E%3Cellipse cx='75' cy='25' rx='18' ry='15' fill='%231a1a1a'/%3E%3Cellipse cx='35' cy='45' rx='12' ry='10' fill='%231a1a1a'/%3E%3Cellipse cx='65' cy='45' rx='12' ry='10' fill='%231a1a1a'/%3E%3Ccircle cx='35' cy='43' r='4' fill='white'/%3E%3Ccircle cx='65' cy='43' r='4' fill='white'/%3E%3Cellipse cx='50' cy='60' rx='8' ry='6' fill='%231a1a1a'/%3E%3Cpath d='M42 68 Q50 75 58 68' stroke='%231a1a1a' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat center;
-    background-size: contain;
-    opacity: 0.15;
-    transform: rotate(15deg);
 }
 
 .header-container {
@@ -207,10 +172,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 3rem;
     margin: 0 0 0;
     line-height: 150%;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--bamboo-dark) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--primary-color);
 }
 
 #hero p {
@@ -254,24 +216,22 @@ h1, h2, h3, h4, h5, h6 {
     color: #333333;
 }
 
-/* Profile Image - Panda Frame */
+/* Profile Image */
 .profile-pic {
     width: 240px;
     height: auto;
     object-fit: contain;
-    box-shadow: 0 4px 15px rgba(45, 90, 39, 0.2);
-    border: 5px solid var(--panda-white);
-    outline: 3px solid var(--panda-black);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid var(--border-color);
     border-radius: 50%;
     transition: var(--transition);
 }
 
 .profile-pic:hover {
-    transform: scale(1.05) rotate(3deg);
-    box-shadow: 0 8px 25px rgba(45, 90, 39, 0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* Section Styles - Bamboo Cards */
+/* Section Styles */
 #research {
     padding-top: 0;
     border-top: none;
@@ -280,46 +240,33 @@ h1, h2, h3, h4, h5, h6 {
 #education, #research, #leadership, #policy-work, #awards, #mentors, #personal, #talks {
     margin: 1rem 0;
     padding: 2rem;
-    background: linear-gradient(135deg, var(--panda-white) 0%, #f0f7ef 100%);
-    border-radius: 16px;
-    box-shadow: 0 3px 15px rgba(45, 90, 39, 0.1);
-    border-left: 5px solid var(--bamboo-leaf);
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    border-left: 4px solid var(--primary-color);
     position: relative;
     transition: var(--transition);
 }
 
 #education:hover, #research:hover, #leadership:hover, #policy-work:hover,
 #awards:hover, #mentors:hover, #personal:hover, #talks:hover {
-    transform: translateX(5px);
-    box-shadow: 0 5px 20px rgba(45, 90, 39, 0.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* Section headers with bamboo decoration */
+/* Section headers */
 #education h2, #research h2, #leadership h2, #policy-work h2, #awards h2, #mentors h2, #personal h2, #talks h2 {
     font-size: 2rem;
     margin-bottom: 0.75rem;
     margin-top: 0;
     text-align: left;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
 }
-
-#research h2::before { content: '🔬'; }
-#education h2::before { content: '🎓'; }
-#leadership h2::before { content: '🌟'; }
-#talks h2::before { content: '🎤'; }
-#awards h2::before { content: '🏆'; }
-#mentors h2::before { content: '🙏'; }
-#personal h2::before { content: '🐼'; }
-#policy-work h2::before { content: '📜'; }
 
 #education p, #research p, #leadership p, #policy-work p, #awards p, #mentors p, #personal p, #talks p {
     font-size: 1.1rem;
     margin-bottom: 1rem;
 }
 
-/* Paw print bullet points */
+/* Bullet points */
 .simple-list {
     list-style-type: none;
     padding-left: 2rem;
@@ -335,15 +282,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .simple-list li::before {
-    content: '🐾';
+    content: '\2022';
     position: absolute;
     left: -1.5rem;
-    font-size: 0.9rem;
-}
-
-/* Alternating leaf and paw */
-.simple-list li:nth-child(even)::before {
-    content: '🌿';
+    color: var(--secondary-color);
+    font-size: 1.2rem;
 }
 
 /* Brand name responsive change at larger breakpoint */
@@ -369,10 +312,11 @@ h1, h2, h3, h4, h5, h6 {
         top: 100%;
         left: 0;
         right: 0;
-        background: linear-gradient(180deg, rgba(245, 249, 243, 0.98) 0%, rgba(168, 213, 162, 0.5) 100%);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
         flex-direction: column;
         padding: 1rem;
-        border-bottom: 3px solid var(--bamboo-leaf);
+        border-bottom: 1px solid var(--border-color);
         gap: 1rem;
         margin-right: 0;
     }
@@ -424,9 +368,9 @@ h1, h2, h3, h4, h5, h6 {
 /* Secret Page Styles */
 #secret-header {
     padding: 2rem;
-    background: linear-gradient(135deg, var(--panda-white) 0%, #e8f5e9 100%);
-    border-radius: 16px;
-    box-shadow: 0 3px 15px rgba(45, 90, 39, 0.1);
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
     margin-bottom: 1rem;
 }
 
@@ -447,10 +391,10 @@ h1, h2, h3, h4, h5, h6 {
 .poem {
     margin: 1rem 0;
     padding: 2rem;
-    background: linear-gradient(135deg, var(--panda-white) 0%, #f0f7ef 100%);
-    border-radius: 16px;
-    box-shadow: 0 3px 15px rgba(45, 90, 39, 0.1);
-    border-left: 5px solid var(--bamboo-leaf);
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    border-left: 4px solid var(--primary-color);
 }
 
 .poem-title {
@@ -509,17 +453,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Fun hover effects */
-@keyframes pandaWave {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(20deg); }
-    75% { transform: rotate(-20deg); }
-}
-
-.navbar-brand:hover::before {
-    animation: pandaWave 0.5s ease-in-out;
-}
-
 /* Scrollbar styling */
 ::-webkit-scrollbar {
     width: 12px;
@@ -530,11 +463,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--bamboo-leaf) 0%, var(--bamboo-dark) 100%);
+    background: var(--secondary-color);
     border-radius: 6px;
     border: 2px solid var(--bg-color);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, var(--primary-color) 0%, var(--bamboo-dark) 100%);
+    background: var(--primary-color);
 }
