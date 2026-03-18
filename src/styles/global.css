@@ -143,6 +143,22 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.85rem;
 }
 
+.site-chain {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.site-chain a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.site-chain a:hover {
+    text-decoration: underline;
+}
+
 /* Hero Section */
 #hero {
     display: flex;
