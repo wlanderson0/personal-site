@@ -1,0 +1,61 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import favicon from '../assets/favicon.svg';
+import favicon96 from '../assets/favicon-96x96.png';
+import faviconIco from '../assets/favicon.ico';
+import appleIcon from '../assets/apple-touch-icon.png';
+import siteManifest from '../assets/site.webmanifest';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonials — William L. Anderson</title>
+    <link rel="icon" type="image/png" href={favicon96.src} sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href={favicon.src} />
+    <link rel="shortcut icon" href={faviconIco.src} />
+    <link rel="apple-touch-icon" sizes="180x180" href={appleIcon.src} />
+    <link rel="manifest" href={siteManifest.src} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <header class="subheader">
+        <a href="/" class="subheader-name">William L. Anderson</a>
+        <Nav />
+      </header>
+
+      <h1 class="page-title">Testimonials</h1>
+      <p class="page-subtitle">Kind words from people I've worked with.</p>
+
+      <div class="page-body">
+        <ul>
+          <li>“When he’s right, he’s right” — Ben</li>
+          <li>“If you were an animal, you’d be a capybara. A jacked capybara” — Nathalie</li>
+          <li>“You’re something of a power-viber” — Alex M</li>
+          <li>“You’re going to be so bald. Just look at your forehead.” — Yix</li>
+          <li>“You’re just special-interests oriented” — Kate</li>
+          <li>“my midwestern white boi has got it i absolutely know it” — Anonymous</li>
+          <li>“You give Chad energy, but like, if Chad was manic” — Alex T</li>
+          <li>“You just say things like they are normal, but they are so not” — Kate</li>
+          <li>“It’s a spectrum for a reason” — Anonymous</li>
+          <li>“Upon seeing Will Panda joy and bigliness arise in heart” — Jasmine</li>
+          <li>“Your ways are permeable and mysterious” — Jeremy</li>
+        </ul>
+      </div>
+
+      <p class="back-link"><a href="/">← Back to home</a></p>
+
+      <footer class="site-footer">
+        <p>© 2026 William L. Anderson</p>
+      </footer>
+    </main>
+  </body>
+</html>
