@@ -146,18 +146,75 @@ import siteManifest from '../assets/site.webmanifest';
       </footer>
     </main>
 
+    <div id="note-popover" class="note-popover" role="tooltip"></div>
+
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const emailContainer = document.getElementById('email-container');
-        if (!emailContainer) return;
-        const user = 'hello';
-        const domain = 'wlanderson';
-        const tld = 'com';
-        const link = document.createElement('a');
-        link.href = 'mailto:' + user + '@' + domain + '.' + tld;
-        link.textContent = user + ' [at] ' + domain + ' [dot] ' + tld;
-        emailContainer.innerHTML = '';
-        emailContainer.appendChild(link);
+        if (emailContainer) {
+          const user = 'hello';
+          const domain = 'wlanderson';
+          const tld = 'com';
+          const link = document.createElement('a');
+          link.href = 'mailto:' + user + '@' + domain + '.' + tld;
+          link.textContent = user + ' [at] ' + domain + ' [dot] ' + tld;
+          emailContainer.innerHTML = '';
+          emailContainer.appendChild(link);
+        }
+
+        const popover = document.getElementById('note-popover');
+        if (!popover) return;
+        let hideTimer: number | null = null;
+
+        function positionPopover(marker: Element) {
+          const rect = marker.getBoundingClientRect();
+          const popWidth = popover!.offsetWidth;
+          const popHeight = popover!.offsetHeight;
+          const scrollX = window.scrollX;
+          const scrollY = window.scrollY;
+          let left = rect.left + scrollX + rect.width / 2 - popWidth / 2;
+          const top = rect.top + scrollY - popHeight - 10;
+          const minLeft = scrollX + 8;
+          const maxLeft = scrollX + document.documentElement.clientWidth - popWidth - 8;
+          left = Math.max(minLeft, Math.min(maxLeft, left));
+          popover!.style.left = left + 'px';
+          popover!.style.top = top + 'px';
+        }
+
+        function showPopover(marker: Element) {
+          if (hideTimer !== null) {
+            clearTimeout(hideTimer);
+            hideTimer = null;
+          }
+          popover!.textContent = marker.getAttribute('data-note') || '';
+          popover!.classList.add('active');
+          requestAnimationFrame(function () { positionPopover(marker); });
+        }
+
+        function scheduleHide() {
+          if (hideTimer !== null) clearTimeout(hideTimer);
+          hideTimer = window.setTimeout(function () {
+            popover!.classList.remove('active');
+            hideTimer = null;
+          }, 300);
+        }
+
+        function cancelHide() {
+          if (hideTimer !== null) {
+            clearTimeout(hideTimer);
+            hideTimer = null;
+          }
+        }
+
+        document.querySelectorAll('sup.note').forEach(function (marker) {
+          marker.addEventListener('mouseenter', function () { showPopover(marker); });
+          marker.addEventListener('mouseleave', scheduleHide);
+          marker.addEventListener('focus', function () { showPopover(marker); });
+          marker.addEventListener('blur', scheduleHide);
+        });
+
+        popover.addEventListener('mouseenter', cancelHide);
+        popover.addEventListener('mouseleave', scheduleHide);
       });
     </script>
   </body>

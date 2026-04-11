@@ -292,14 +292,14 @@ section a:hover,
     background-size: 100% 2px;
 }
 
-/* Hover footnote markers (tooltip content lives in data-note attr
-   so pseudo-elements render it — keeps it out of DOM selection) */
+/* Hover footnote markers; tooltip content lives in data-note and is
+   rendered into a single shared .note-popover element outside the
+   paragraph, so DOM selection never reaches it. */
 sup.note {
     font-family: var(--serif-display);
     color: var(--accent);
     font-weight: 600;
     cursor: help;
-    position: relative;
     padding: 0 0.1em;
     outline: none;
     transition: color 0.2s ease;
@@ -310,22 +310,13 @@ sup.note:focus {
     color: var(--accent-soft);
 }
 
-sup.note::before,
-sup.note::after {
+.note-popover {
     position: absolute;
-    left: 50%;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.25s ease, transform 0.25s ease;
-    z-index: 10;
-}
-
-sup.note::before {
-    content: attr(data-note);
-    bottom: calc(100% + 0.6rem);
-    transform: translateX(-50%) translateY(6px);
-    width: 260px;
-    padding: 0.85rem 1rem;
+    top: -9999px;
+    left: -9999px;
+    width: 280px;
+    max-width: calc(100vw - 2rem);
+    padding: 0.9rem 1.05rem;
     background: var(--bg-warm);
     border: 1px solid var(--rule);
     font-family: var(--serif-body);
@@ -334,30 +325,18 @@ sup.note::before {
     line-height: 1.55;
     color: var(--text);
     text-align: left;
-    white-space: normal;
     box-shadow: 0 12px 28px -14px rgba(28, 26, 22, 0.28);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-sup.note::after {
-    content: "";
-    bottom: calc(100% + 0.2rem);
-    width: 8px;
-    height: 8px;
-    background: var(--bg-warm);
-    border-right: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    transform: translateX(-50%) rotate(45deg);
-}
-
-sup.note:hover::before,
-sup.note:focus::before {
+.note-popover.active {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-sup.note:hover::after,
-sup.note:focus::after {
-    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 /* Generic page title (subpages) */
@@ -521,18 +500,13 @@ sup.note:focus::after {
     .poem-title { font-size: 1.4rem; }
     .poem-text { font-size: 1rem; }
 
-    sup.note::before {
+    .note-popover.active {
         position: fixed;
-        left: 1rem;
+        top: auto !important;
+        left: 1rem !important;
         right: 1rem;
         bottom: 1rem;
-        top: auto;
         width: auto;
-        transform: translateY(20px);
-    }
-    sup.note::after { display: none; }
-    sup.note:hover::before,
-    sup.note:focus::before {
-        transform: translateY(0);
+        max-width: none;
     }
 }
