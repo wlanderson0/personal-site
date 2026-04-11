@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
+import { Image } from 'astro:assets';
 import Nav from '../components/Nav.astro';
+import hatsImage from '../assets/hats.jpg';
 import favicon from '../assets/favicon.svg';
 import favicon96 from '../assets/favicon-96x96.png';
 import faviconIco from '../assets/favicon.ico';
@@ -12,7 +14,7 @@ import siteManifest from '../assets/site.webmanifest';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Now — William L. Anderson</title>
+    <title>Hats — William L. Anderson</title>
     <link rel="icon" type="image/png" href={favicon96.src} sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href={favicon.src} />
     <link rel="shortcut icon" href={faviconIco.src} />
@@ -32,12 +34,14 @@ import siteManifest from '../assets/site.webmanifest';
         <Nav />
       </header>
 
-      <h1 class="page-title">What am I up to now?</h1>
-      <p class="page-subtitle">Last updated 4/11/26, from the MATS office in London.</p>
+      <h1 class="page-title">Hats</h1>
 
       <div class="page-body">
-        <p>This is a "<a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">now page</a>." You should make one too!</p>
-        <p>I've just moved to London! I'll be here for the MATS extension and for my new role at the Cooperative AI Foundation. It's a shockingly nice city when sunny, and still quite good the rest of the time. My life is very differently-shaped than it was a year ago... I'm grateful for all that's happened in the last year.</p>
+        <p>I love hats. If you have a hat you think I’d like, email me. I’ll donate ~$100 to a charity of your choice in exchange (if it’s a really good hat, we can negotiate).</p>
+      </div>
+
+      <div class="figure-crop-middle">
+        <Image src={hatsImage} alt="Some of Will's hats." width={1152} />
       </div>
 
       <p class="back-link"><a href="/">← Back to home</a></p>
