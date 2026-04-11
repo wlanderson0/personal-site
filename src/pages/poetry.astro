@@ -1,11 +1,9 @@
 ---
 import '../styles/global.css';
-// Import favicon assets
 import favicon from '../assets/favicon.svg';
 import favicon96 from '../assets/favicon-96x96.png';
 import faviconIco from '../assets/favicon.ico';
 import appleIcon from '../assets/apple-touch-icon.png';
-// Import site manifest
 import siteManifest from '../assets/site.webmanifest';
 ---
 
@@ -13,33 +11,39 @@ import siteManifest from '../assets/site.webmanifest';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Poetry - William L. Anderson</title>
+    <title>Poetry — William L. Anderson</title>
     <link rel="icon" type="image/png" href={favicon96.src} sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href={favicon.src} />
     <link rel="shortcut icon" href={faviconIco.src} />
     <link rel="apple-touch-icon" sizes="180x180" href={appleIcon.src} />
     <link rel="manifest" href={siteManifest.src} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-   <nav class="navbar">
-        <a href="/" class="navbar-brand">
-            <span class="brand-full">William L. Anderson</span>
-            <span class="brand-short">Will Anderson</span>
-        </a>
-        <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
-        <ul class="navbar-links" id="navbarLinks">
+    <main class="container">
+      <header class="subheader">
+        <a href="/" class="subheader-name">William L. Anderson</a>
+        <nav class="topnav">
+          <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/now">Now</a></li>
             <li><a href="https://www.linkedin.com/in/william-l-anderson-a853b92aa/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
             <li><a href="https://github.com/wlanderson0" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             <li><a href="https://wlandersons.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a></li>
             <li><a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
-        </ul>
-    </nav>
-    <main class="container">
-      <section id="secret-header">
-        <p class="secret-intro">Here are some poems I know by heart:</p>
-      </section>
+          </ul>
+        </nav>
+      </header>
+
+      <h1 class="page-title">Poetry</h1>
+      <p class="page-subtitle">A few poems I know by heart.</p>
+
+      <hr class="rule ornament" />
 
       <article class="poem">
         <h2 class="poem-title">Sonnet 18</h2>
@@ -188,37 +192,11 @@ import siteManifest from '../assets/site.webmanifest';
         </div>
       </article>
 
+      <p class="back-link"><a href="/">← Back to home</a></p>
+
       <footer class="site-footer">
-        <p>&copy; 2026 William L. Anderson. All rights reserved.</p>
+        <p>© 2026 William L. Anderson</p>
       </footer>
-
     </main>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-          // Mobile menu functionality
-          const mobileToggle = document.getElementById('mobileMenuToggle');
-          const navbarLinks = document.getElementById('navbarLinks');
-
-          if (mobileToggle && navbarLinks) {
-            // Add click event listener to the mobile toggle button
-            mobileToggle.addEventListener('click', function() {
-              navbarLinks.classList.toggle('active');
-            });
-          }
-
-          // Close mobile menu when clicking outside
-          document.addEventListener('click', function(event) {
-            if (
-              navbarLinks &&
-              mobileToggle &&
-              !navbarLinks.contains(event.target as Node) &&
-              !mobileToggle.contains(event.target as Node)
-            ) {
-              navbarLinks.classList.remove('active');
-            }
-          });
-        });
-    </script>
   </body>
 </html>

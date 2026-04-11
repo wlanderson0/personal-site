@@ -1,14 +1,11 @@
 ---
 import '../styles/global.css';
 import { Image } from 'astro:assets';
-// Import assets
 import profilePic from '../assets/me.jpg';
-// Import favicon assets
 import favicon from '../assets/favicon.svg';
 import favicon96 from '../assets/favicon-96x96.png';
 import faviconIco from '../assets/favicon.ico';
 import appleIcon from '../assets/apple-touch-icon.png';
-// Import site manifest
 import siteManifest from '../assets/site.webmanifest';
 ---
 
@@ -22,43 +19,50 @@ import siteManifest from '../assets/site.webmanifest';
     <link rel="shortcut icon" href={faviconIco.src} />
     <link rel="apple-touch-icon" sizes="180x180" href={appleIcon.src} />
     <link rel="manifest" href={siteManifest.src} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-   <nav class="navbar">
-        <a href="/" class="navbar-brand">
-            <span class="brand-full">William L. Anderson</span>
-            <span class="brand-short">Will Anderson</span>
-        </a>
-        <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
-        <ul class="navbar-links" id="navbarLinks">
-            <li><a href="/">Home</a></li>
-            <li><a href="/now">Now</a></li>
-            <li><a href="https://www.linkedin.com/in/william-l-anderson-a853b92aa/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-            <li><a href="https://github.com/wlanderson0" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="https://wlandersons.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a></li>
-            <li><a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
-        </ul>
-    </nav>
     <main class="container">
-      <section id="hero">
-        <div class="header-container">
-          <Image src={profilePic} alt="William L. Anderson" class="profile-pic" />
-          <div class="header-text">
+      <header class="hero">
+        <div class="hero-top">
+          <div class="profile-pic">
+            <Image src={profilePic} alt="William L. Anderson" width={320} height={320} />
+          </div>
+          <div class="hero-title">
             <h1>William L. Anderson</h1>
-			<div id="email-container" class="contact-info">
-				<noscript>hello [at] wlanderson [dot] com</noscript>
-			</div>
-            <p>Hi, I'm Will! I'm a <a href="https://www.matsprogram.org/" target="_blank" rel="noopener noreferrer">MATS</a> Fellow with the <a href="https://wittlab.ai" target="_blank" rel="noopener noreferrer">Oxford Witt Lab</a> and soon-to-be team lead at the <a href="https://www.cooperativeai.com/foundation" target="_blank" rel="noopener noreferrer">Cooperative AI Foundation</a>. I work on multiagent security, national security, and generally making things go well. During my undergrad at UW–Madison, I was Director of the <a href="https://waisi.org/" target="_blank" rel="noopener noreferrer">Wisconsin AI Safety Initiative</a> and a Research Fellow at <a href="https://xrisk.uchicago.edu/" target="_blank" rel="noopener noreferrer">UChicago XLab</a>. I have strong beliefs, weakly held, and update based on <a href="https://forms.gle/brAiMELagvQqUV1v9" target="_blank" rel="noopener noreferrer">feedback</a>.</p>
+            <div id="email-container" class="email">
+              <noscript>hello [at] wlanderson [dot] com</noscript>
+            </div>
+            <nav class="topnav">
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/now">Now</a></li>
+                <li><a href="https://www.linkedin.com/in/william-l-anderson-a853b92aa/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://github.com/wlanderson0" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://wlandersons.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a></li>
+                <li><a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+              </ul>
+            </nav>
           </div>
         </div>
-      </section>
+        <p class="intro">
+          Hi, I'm Will! I'm a <a href="https://www.matsprogram.org/" target="_blank" rel="noopener noreferrer">MATS</a><sup class="note" tabindex="0">*<span class="note-content">The ML Alignment &amp; Theory Scholars program pairs fellows with alignment researchers for focused, full-time projects. Hover notes like this one are what I'd use for asides and sources.</span></sup> Fellow with the <a href="https://wittlab.ai" target="_blank" rel="noopener noreferrer">Oxford Witt Lab</a> and soon-to-be team lead at the <a href="https://www.cooperativeai.com/foundation" target="_blank" rel="noopener noreferrer">Cooperative AI Foundation</a>. I work on multiagent security, national security, and generally making things go well. During my undergrad at UW–Madison, I was Director of the <a href="https://waisi.org/" target="_blank" rel="noopener noreferrer">Wisconsin AI Safety Initiative</a> and a Research Fellow at <a href="https://xrisk.uchicago.edu/" target="_blank" rel="noopener noreferrer">UChicago XLab</a>. I have strong beliefs, weakly held, and update based on <a href="https://forms.gle/brAiMELagvQqUV1v9" target="_blank" rel="noopener noreferrer">feedback</a>.
+        </p>
+      </header>
+
+      <hr class="rule ornament" />
 
       <section id="research">
         <h2>Research</h2>
         <p>My work focuses on the security risks that arise as increasingly capable AI agents proliferate and come into contact with one another. My technical work focuses on <a href="https://arxiv.org/abs/2505.02077" target="_blank" rel="noopener noreferrer">multi-agent security</a>, and my policy work focuses on the national security implications of AI.</p>
-        <ul class="simple-list">
-          <li>I'm a <a href="https://www.matsprogram.org/" target="_blank" rel="noopener noreferrer">MATS</a> Fellow in the Multiagent Security stream with <a href="https://wittlab.ai/author/christian-schroeder-de-witt/" target="_blank" rel="noopener noreferrer">Dr. Christian Schroeder de Witt</a>.</li>
-          <li>I was a 2025 Summer Research Fellow at UChicago's Existential Risk Lab, where I worked on subtle attacks on multi-agent systems in critical infrastructure, advised by <a href="https://lewishammond.com/" target="_blank" rel="noopener noreferrer">Dr. Lewis Hammond</a>.</li>
+        <ul>
+          <li>I'm a MATS Fellow in the Multiagent Security stream with <a href="https://wittlab.ai/author/christian-schroeder-de-witt/" target="_blank" rel="noopener noreferrer">Dr. Christian Schroeder de Witt</a>.</li>
+          <li>I was a 2025 Summer Research Fellow at UChicago's Existential Risk Lab, where I worked on subtle attacks<sup class="note" tabindex="0">*<span class="note-content">Attacks where the adversarial signal is distributed across many interactions, so no single exchange looks malicious on its own.</span></sup> on multi-agent systems in critical infrastructure, advised by <a href="https://lewishammond.com/" target="_blank" rel="noopener noreferrer">Dr. Lewis Hammond</a>.</li>
           <li>I've got a series of pieces in the works on superintelligence deterrence (working with <a href="https://ari.us/team/morgan-c-plummer/" target="_blank" rel="noopener noreferrer">Morgan C. Plummer</a>). I also wrote about <a href="https://substack.com/home/post/p-183117624">managing US-ROK relations</a> amidst expanding export controls.</li>
           <li>I spent a year and change working on interpretability with Prof. <a href="https://pages.stat.wisc.edu/~zhong35/" target="_blank" rel="noopener noreferrer">Yiqiao Zhong</a> and Prof. <a href="https://junjiehu.github.io/" target="_blank" rel="noopener noreferrer">Junjie Hu</a>.</li>
           <li>In summer 2024, I completed the <a href="https://www.arena.education/" target="_blank" rel="noopener noreferrer">Alignment Research Engineer Accelerator</a> (ARENA) curriculum. I highly recommend others check it out, I've found no better way to quickly upskill in ML Safety.</li>
@@ -67,20 +71,24 @@ import siteManifest from '../assets/site.webmanifest';
         </ul>
       </section>
 
+      <hr class="rule" />
+
       <section id="leadership">
-        <h2>Leadership & Involvement</h2>
-        <p>During my undergrad, I was the Director of the <a href="https://waisi.org/" target="_blank" rel="noopener noreferrer">Wisconsin AI Safety Initiative</a>, a 501(c)(3) nonprofit organization of technical and policy researchers dedicated to guiding the development of advanced AI towards a future that benefits everyone. </p>
-        <ul class="simple-list">
+        <h2>Leadership &amp; Involvement</h2>
+        <p>During my undergrad, I was the Director of the <a href="https://waisi.org/" target="_blank" rel="noopener noreferrer">Wisconsin AI Safety Initiative</a>, a 501(c)(3) nonprofit of technical and policy researchers dedicated to guiding the development of advanced AI towards a future that benefits everyone.</p>
+        <ul>
           <li>We had 120+ weekly active participants across our intro program and advanced reading groups. Our members have produced 20+ papers, published at ICML, ICLR, NeurIPS, and other top venues.</li>
-          <li>We hosted an interdisciplinary panel on AI, featuring faculty from Education, Computer Sciences, and Philosophy. This spring, we're hosting the <a href="https://cdis.wisc.edu/ai-meets-society-aims-symposium/" rel="noopener noreferrer">AI Meets Society Symposium</a>, a 320 person conference bringing together AI researchers, policymakers, and industry leaders.</li>
-          <li>I mentor AI Safety student organizers through <a href="https://kairos-project.org/"  target="_blank" rel="noopener noreferrer">Kairos</a>'s Pathfinder program.</li>
+          <li>We hosted an interdisciplinary panel on AI, featuring faculty from Education, Computer Sciences, and Philosophy. This spring, we're hosting the <a href="https://cdis.wisc.edu/ai-meets-society-aims-symposium/" rel="noopener noreferrer">AI Meets Society Symposium</a>, a 320-person conference bringing together AI researchers, policymakers, and industry leaders.</li>
+          <li>I mentor AI Safety student organizers through <a href="https://kairos-project.org/" target="_blank" rel="noopener noreferrer">Kairos</a>'s Pathfinder program.</li>
         </ul>
       </section>
 
+      <hr class="rule" />
+
       <section id="talks">
         <h2>Talks</h2>
-        <ul class="simple-list">
-          <li><em>Organizer</em>, Research Process & Technical AI Safety Workshops, AIMS Symposium, 2026</li>
+        <ul>
+          <li><em>Organizer</em>, Research Process &amp; Technical AI Safety Workshops, AIMS Symposium, 2026</li>
           <li><em>Panelist</em>, Future of AI Panel, AIMS Symposium, 2026</li>
           <li><em>Multi-Agent Security Risks</em>, International Conference on Information Systems, 2025</li>
           <li><em>Panelist</em>, Wisconsin Technology Council Panel on AI Safety, 2025</li>
@@ -91,19 +99,23 @@ import siteManifest from '../assets/site.webmanifest';
         </ul>
       </section>
 
+      <hr class="rule" />
+
       <section id="awards">
-        <h2>Awards & Fellowships</h2>
-        <ul class="simple-list">
+        <h2>Awards &amp; Fellowships</h2>
+        <ul>
           <li>2025 Summer Research Fellowship from UChicago XLab.</li>
-          <li>2025-2026 Sophomore Research Fellowship from UW-Madison.</li>
+          <li>2025–2026 Sophomore Research Fellowship from UW–Madison.</li>
           <li>2025 OpenPhil Action Fund University Organizer Fellowship.</li>
         </ul>
       </section>
 
+      <hr class="rule" />
+
       <section id="mentors">
-        <h2>Mentorship Acknowledgements</h2>
+        <h2>Mentorship</h2>
         <p>I've been lucky to have many incredible mentors throughout my life. A non-exhaustive list of thanks:</p>
-        <ul class="simple-list">
+        <ul>
           <li>Professor Yiqiao Zhong, Dr. Lewis Hammond, Dr. Christian Schroeder de Witt, and Morgan Plummer, for all of their mentorship and kindness.</li>
           <li>Ben Hayum, Jeremy Kintana, and everyone else at WAISI for their wisdom, guidance, and friendship.</li>
           <li>John Bradley, Dan Bielski, Sean Kern, Zachary Ludvigson, and the many other wonderful coaches and teachers I've had.</li>
@@ -111,10 +123,12 @@ import siteManifest from '../assets/site.webmanifest';
         </ul>
       </section>
 
+      <hr class="rule" />
+
       <section id="personal">
         <h2>Personal</h2>
         <p>I'm a proud Minnesotan, and love the lakes, outdoors, cold, and snow. I was a competitive swimmer, captained my high school team, and worked during summers as a lifeguard. I've been vegetarian for about 6 years. Some other things I like:</p>
-        <ul class="simple-list">
+        <ul>
           <li>Anki, Beli, Curius.</li>
           <li>Hats.</li>
           <li>Tolkien, Star Wars, GoT, Eragon, The Witcher, Monty Python, Tom Lehrer, <a href="/poetry">Shakespeare</a>, Henrik Karlsson (<a href="https://www.henrikkarlsson.xyz/p/looking-for-alice" target="_blank" rel="noopener noreferrer">Looking for Alice</a>), <a href="https://www.astralcodexten.com/" target="_blank" rel="noopener noreferrer">Scott Alexander</a>, <a href="https://benkuhn.net/" target="_blank" rel="noopener noreferrer">Ben Kuhn</a>, and many others.</li>
@@ -125,80 +139,26 @@ import siteManifest from '../assets/site.webmanifest';
 
       <footer class="site-footer">
         <div class="site-chain">
-          <a href="https://www.kaustubhais.com/">&larr; Kaustubh</a>
-          <a href="https://jeremykintana.com/">Jeremy &rarr;</a>
+          <a href="https://www.kaustubhais.com/">← Kaustubh</a>
+          <a href="https://jeremykintana.com/">Jeremy →</a>
         </div>
-        <p>&copy; 2026 William L. Anderson. All rights reserved.</p>
+        <p>© 2026 William L. Anderson</p>
       </footer>
     </main>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-          // Email functionality (keep your existing code)
-          const emailContainer = document.getElementById('email-container');
-          if (emailContainer) {
-            const user = 'hello';
-            const domain = 'wlanderson';
-            const topLevelDomain = 'com'
-            
-            const link = document.createElement('a');
-            link.href = 'mailto:' + user + '@' + domain + '.' + topLevelDomain;
-            link.className = 'email-link';
-            
-            const userSpan = document.createElement('span');
-            userSpan.textContent = user;
-            userSpan.className = 'email-part';
-            
-            const atSpan = document.createElement('span');
-            atSpan.textContent = ' [at] ';
-            atSpan.className = 'email-separator';
-            
-            const domainSpan = document.createElement('span');
-            domainSpan.textContent = domain;
-            domainSpan.className = 'email-part';
-            
-            const dotSpan = document.createElement('span');
-            dotSpan.textContent = ' [dot] ';
-            dotSpan.className = 'email-separator';
-            
-            const tldSpan = document.createElement('span');
-            tldSpan.textContent = topLevelDomain;
-            tldSpan.className = 'email-part';
-            
-            link.appendChild(userSpan);
-            link.appendChild(atSpan);
-            link.appendChild(domainSpan);
-            link.appendChild(dotSpan);
-            link.appendChild(tldSpan);
-            
-            emailContainer.innerHTML = '';
-            emailContainer.appendChild(link);
-          }
-
-          // Mobile menu functionality (FIXED VERSION)
-          const mobileToggle = document.getElementById('mobileMenuToggle');
-          const navbarLinks = document.getElementById('navbarLinks');
-          
-          if (mobileToggle && navbarLinks) {
-            // Add click event listener to the mobile toggle button
-            mobileToggle.addEventListener('click', function() {
-              navbarLinks.classList.toggle('active');
-            });
-          }
-
-          // Close mobile menu when clicking outside
-          document.addEventListener('click', function(event) {
-            if (
-              navbarLinks &&
-              mobileToggle &&
-              !navbarLinks.contains(event.target as Node) &&
-              !mobileToggle.contains(event.target as Node)
-            ) {
-              navbarLinks.classList.remove('active');
-            }
-          });
-
-        });
+      document.addEventListener('DOMContentLoaded', function () {
+        const emailContainer = document.getElementById('email-container');
+        if (!emailContainer) return;
+        const user = 'hello';
+        const domain = 'wlanderson';
+        const tld = 'com';
+        const link = document.createElement('a');
+        link.href = 'mailto:' + user + '@' + domain + '.' + tld;
+        link.textContent = user + ' [at] ' + domain + ' [dot] ' + tld;
+        emailContainer.innerHTML = '';
+        emailContainer.appendChild(link);
+      });
     </script>
   </body>
 </html>
