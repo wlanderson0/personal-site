@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Nav from '../components/Nav.astro';
 import favicon from '../assets/favicon.svg';
 import favicon96 from '../assets/favicon-96x96.png';
 import faviconIco from '../assets/favicon.ico';
@@ -28,16 +29,7 @@ import siteManifest from '../assets/site.webmanifest';
     <main class="container">
       <header class="subheader">
         <a href="/" class="subheader-name">William L. Anderson</a>
-        <nav class="topnav">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/now">Now</a></li>
-            <li><a href="https://www.linkedin.com/in/william-l-anderson-a853b92aa/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-            <li><a href="https://github.com/wlanderson0" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="https://wlandersons.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a></li>
-            <li><a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
-          </ul>
-        </nav>
+        <Nav />
       </header>
 
       <h1 class="page-title">Poetry</h1>

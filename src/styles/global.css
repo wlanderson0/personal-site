@@ -163,11 +163,11 @@ body {
 
 .intro::first-letter {
     font-family: var(--serif-display);
-    font-size: 3.8rem;
+    font-size: 3.6rem;
     font-weight: 500;
     float: left;
-    line-height: 0.9;
-    padding: 0.4rem 0.55rem 0 0;
+    line-height: 0.88;
+    padding: 0.25rem 0.55rem 0 0;
     color: var(--accent);
 }
 
@@ -428,6 +428,40 @@ sup.note:focus {
 
 .poem-couplet + .poem-couplet {
     margin-top: 0 !important;
+}
+
+/* Labeled "collections" — one flowing paragraph with quiet links.
+   Kept outside of <section> so the section-link underline cascade
+   doesn't apply. */
+.collections {
+    font-size: 1.02rem;
+    line-height: 1.75;
+    margin: 0;
+    color: var(--text);
+    text-align: left;
+}
+
+.collection-label {
+    font-family: var(--serif-display);
+    font-variant: small-caps;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-right: 0.5em;
+}
+
+.collection-label ~ .collection-label {
+    margin-left: 0.75em;
+}
+
+.collections a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.collections a:hover {
+    color: var(--accent);
 }
 
 /* Footer */
