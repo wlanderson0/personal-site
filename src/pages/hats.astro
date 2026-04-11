@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { Image } from 'astro:assets';
 import Nav from '../components/Nav.astro';
+import ThemeScript from '../components/ThemeScript.astro';
 import hatsImage from '../assets/hats.jpg';
 import favicon from '../assets/favicon.svg';
 import favicon96 from '../assets/favicon-96x96.png';
@@ -14,6 +15,7 @@ import siteManifest from '../assets/site.webmanifest';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <ThemeScript />
     <title>Hats — William L. Anderson</title>
     <link rel="icon" type="image/png" href={favicon96.src} sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href={favicon.src} />
