@@ -457,6 +457,57 @@ sup.note:focus {
     display: block;
 }
 
+/* Meeting page booking options */
+.booking-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2.5rem 0 1.5rem;
+}
+
+.booking-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    background: var(--bg-warm);
+    border: 1px solid var(--rule);
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.booking-option:hover,
+.booking-option:focus-visible {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px -18px rgba(28, 26, 22, 0.35);
+    outline: none;
+}
+
+.booking-option-label {
+    font-family: var(--serif-display);
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: var(--text);
+    line-height: 1.1;
+}
+
+.booking-option-hint {
+    font-family: var(--serif-display);
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-top: 0.4rem;
+}
+
+@media (max-width: 600px) {
+    .booking-options {
+        grid-template-columns: 1fr;
+    }
+}
+
 .back-link {
     margin-top: 3rem;
     text-align: center;
