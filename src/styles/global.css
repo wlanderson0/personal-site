@@ -518,6 +518,64 @@ sup.note:focus {
     margin-top: 0 !important;
 }
 
+/* Publications */
+.publications .pub-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: pub;
+}
+
+.publications .pub-list > li {
+    position: relative;
+    padding-left: 2.25rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.55;
+}
+
+.publications .pub-list > li::before {
+    counter-increment: pub;
+    content: "[" counter(pub) "]";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: var(--serif-display);
+    font-size: 0.88rem;
+    color: var(--muted);
+}
+
+.pub-title {
+    display: block;
+    font-family: var(--serif-display);
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 0.2rem;
+}
+
+.pub-authors {
+    display: block;
+    font-size: 0.97rem;
+    color: var(--muted);
+}
+
+.pub-authors strong {
+    font-weight: 600;
+    color: var(--text);
+}
+
+[data-theme="dark"] .pub-authors {
+    color: #b8a890;
+}
+
+.pub-venue {
+    display: block;
+    font-family: var(--serif-display);
+    font-style: italic;
+    font-size: 0.93rem;
+    color: var(--muted);
+}
+
 /* Labeled "collections" — one flowing paragraph with quiet links.
    Kept outside of <section> so the section-link underline cascade
    doesn't apply. */
