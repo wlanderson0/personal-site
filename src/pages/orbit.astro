@@ -1,0 +1,24 @@
+---
+// Auto-forwards wlanderson.com/orbit to the Orbit repository.
+// To point this somewhere else (e.g. a new release repo), change ONLY the line below.
+const REDIRECT_TARGET = 'https://github.com/benhagag10/orbit';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content={`0; url=${REDIRECT_TARGET}`} />
+    <link rel="canonical" href={REDIRECT_TARGET} />
+    <title>Redirecting to Orbit…</title>
+    <script is:inline define:vars={{ REDIRECT_TARGET }}>
+      window.location.replace(REDIRECT_TARGET);
+    </script>
+  </head>
+  <body>
+    <p>
+      Redirecting to Orbit… If you are not redirected,
+      <a href={REDIRECT_TARGET}>click here</a>.
+    </p>
+  </body>
+</html>
