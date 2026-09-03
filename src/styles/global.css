@@ -674,19 +674,11 @@ sup.note:focus {
 }
 
 .site-chain {
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 1rem;
 }
 
-.site-chain a {
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.25s ease;
-}
-
-.site-chain a:hover {
-    color: var(--accent);
+.site-chain iframe {
+    display: block;
 }
 
 .site-footer p {
