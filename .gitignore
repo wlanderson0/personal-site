@@ -22,3 +22,18 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# jetbrains folder when mounted as a device node by the sandbox
+.idea
+
+# sandbox (glovebox) home-directory overlay — not project files
+.bash_profile
+.bashrc
+.profile
+.zprofile
+.zshrc
+.gitconfig
+.ripgreprc
+.gitmodules
+.mcp.json
+.claude/
