@@ -679,6 +679,9 @@ sup.note:focus {
 
 .site-chain iframe {
     display: block;
+    width: 100%;
+    height: 44px;
+    border: 0;
 }
 
 .site-footer p {

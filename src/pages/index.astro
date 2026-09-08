@@ -92,9 +92,12 @@ import faviconWittLab from '../assets/favicons/wittlab.png';
 
       <footer class="site-footer">
         <div class="site-chain">
-          <iframe src="https://waisi.live/embed/will"
+          <!-- Static src carries the light-theme params as a no-JS fallback; the
+               script below rebuilds it from the CSS variables (see :root in
+               global.css) and re-applies it whenever the theme toggles. -->
+          <iframe src="https://waisi.live/embed/will/?text_color=%236b6458&link_color=%236b6458&border_color=%23e4ddc9&font=%27Lora%27%2C+Georgia%2C+serif&font_size=14.4px"
+                  data-embed="https://waisi.live/embed/will/"
                   title="waisi.live webring"
-                  style="width:100%;height:44px;border:0"
                   loading="lazy"></iframe>
         </div>
         <p>© 2026 William L. Anderson</p>
@@ -171,6 +174,42 @@ import faviconWittLab from '../assets/favicons/wittlab.png';
         popover.addEventListener('mouseenter', cancelHide);
         popover.addEventListener('mouseleave', scheduleHide);
       });
+    </script>
+
+    <script>
+      // The waisi.live webring embed reads colours and type from query params,
+      // so we rebuild its URL from our CSS variables and again whenever the
+      // theme toggles.
+      (function () {
+        const frame = document.querySelector<HTMLIFrameElement>('.site-chain iframe');
+        const footer = frame?.closest<HTMLElement>('.site-footer');
+        if (!frame || !footer) return;
+        const base = frame.getAttribute('data-embed') || '';
+
+        function themedUrl(): string {
+          const root = getComputedStyle(document.documentElement);
+          const cssVar = (name: string) => root.getPropertyValue(name).trim();
+          const params = new URLSearchParams({
+            text_color: cssVar('--muted'),
+            link_color: cssVar('--muted'),
+            border_color: cssVar('--rule'),
+            font: cssVar('--serif-display'),
+            font_size: getComputedStyle(footer).fontSize,
+          });
+          return base + '?' + params.toString();
+        }
+
+        function apply() {
+          const url = themedUrl();
+          if (frame.src !== url) frame.src = url;
+        }
+
+        apply();
+        new MutationObserver(apply).observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['data-theme'],
+        });
+      })();
     </script>
   </body>
 </html>
