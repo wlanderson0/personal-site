@@ -439,24 +439,6 @@ sup.note:focus {
     margin: 2rem auto;
 }
 
-/* Wrapper that crops the top and bottom quarter of a portrait image,
-   showing only the middle 50% of the source. */
-.figure-crop-middle {
-    display: block;
-    max-width: 100%;
-    margin: 2rem auto;
-    overflow: hidden;
-    aspect-ratio: 9 / 8;
-}
-
-.figure-crop-middle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    display: block;
-}
-
 /* Meeting page booking options */
 .booking-options {
     display: grid;
