@@ -30,7 +30,7 @@ import faviconWittLab from '../assets/favicons/wittlab.png';
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -87,12 +87,12 @@ import faviconWittLab from '../assets/favicons/wittlab.png';
           <!-- Static src carries the light-theme params as a no-JS fallback; the
                script below rebuilds it from the CSS variables (see :root in
                global.css) and re-applies it whenever the theme toggles. -->
-          <iframe src="https://waisi.live/embed/will/?text_color=%236b6458&link_color=%236b6458&border_color=%23e4ddc9&font=%27Lora%27%2C+Georgia%2C+serif&font_size=14.4px"
+          <iframe src="https://waisi.live/embed/will/?text_color=%236b6458&link_color=%236b6458&border_color=%23dcd2bb&background=%23f7f2e6&font=%27Lora%27%2C+Georgia%2C+serif&font_size=14.4px"
                   data-embed="https://waisi.live/embed/will/"
                   title="waisi.live webring"
                   loading="lazy"></iframe>
         </div>
-        <p>© 2026 William L. Anderson</p>
+        <p>© 2026 <span class="signature">W.L.A.</span></p>
       </footer>
     </main>
 
@@ -185,6 +185,10 @@ import faviconWittLab from '../assets/favicons/wittlab.png';
             text_color: cssVar('--muted'),
             link_color: cssVar('--muted'),
             border_color: cssVar('--rule'),
+            // The embed declares no color-scheme, so in dark mode the browser
+            // paints an opaque light backdrop behind its transparent page;
+            // passing our background colour covers it.
+            background: cssVar('--bg'),
             font: cssVar('--serif-display'),
             font_size: getComputedStyle(footer).fontSize,
           });
