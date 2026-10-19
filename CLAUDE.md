@@ -36,7 +36,7 @@ src/
 │   └── global.css           # All CSS (variables, navbar, sections, responsive)
 ├── assets/                  # Images and static assets (favicons, profile pic, etc.)
 public/
-└── resume.pdf               # Static file served directly
+└── william_l_anderson_resume.pdf  # Static file served directly
 ```
 
 ### Important Architectural Notes
