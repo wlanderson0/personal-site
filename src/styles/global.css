@@ -228,7 +228,7 @@ body {
     color: var(--accent);
 }
 
-/* Subpage header (research, poetry, etc.) */
+/* Subpage header (research, etc.) */
 .subheader {
     text-align: center;
     margin-bottom: 3rem;
@@ -517,49 +517,6 @@ sup.note:focus {
     color: var(--link);
 }
 
-/* Poems */
-.poem {
-    margin: 0 0 3.25rem;
-}
-
-.poem-title {
-    font-family: var(--lettering);
-    font-weight: 400;
-    font-size: 1.65rem;
-    margin: 0 0 0.15rem;
-    color: var(--text);
-    text-align: center;
-    letter-spacing: 0.05em;
-}
-
-.poem-author {
-    font-family: var(--serif-display);
-    font-style: italic;
-    font-size: 1rem;
-    color: var(--muted);
-    margin: 0 0 1.35rem;
-    text-align: center;
-}
-
-.poem-text {
-    text-align: center;
-    font-size: 1.04rem;
-    line-height: 1.75;
-    color: var(--text);
-}
-
-.poem-text p {
-    margin: 0;
-}
-
-.poem-couplet {
-    margin-top: 0.85rem !important;
-}
-
-.poem-couplet + .poem-couplet {
-    margin-top: 0 !important;
-}
-
 /* Publications */
 .publications .pub-list {
     list-style: none;
@@ -709,8 +666,6 @@ sup.note:focus {
     .bio > p:first-child::first-letter { font-size: 3.2rem; }
     .subheader { margin-bottom: 2.25rem; }
     .subheader-name { font-size: 1.4rem; }
-    .poem-title { font-size: 1.4rem; }
-    .poem-text { font-size: 1rem; }
 
     .note-popover.active {
         position: fixed;
